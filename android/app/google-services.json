@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "387488316116",
+    "project_id": "my-shop-e7b87",
+    "storage_bucket": "my-shop-e7b87.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387488316116:android:2ad06184f8614bdbbe9941",
+        "android_client_info": {
+          "package_name": "uz.pskoreyadan.shop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWmCi-yy756RGM-2wJexfeCDHiWSdI8yA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
