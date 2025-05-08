@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 class CategoryItem extends StatefulWidget {
-  const CategoryItem({Key? key});
+  const CategoryItem({super.key});
 
   @override
   State<CategoryItem> createState() => _CategoryItemState();
