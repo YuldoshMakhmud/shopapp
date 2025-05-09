@@ -6,6 +6,7 @@ import 'package:firebase_shop/controllers/category_controller.dart';
 import 'package:firebase_shop/views/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 
 void main()async {
@@ -13,7 +14,7 @@ void main()async {
   Platform.isAndroid? await 
   Firebase.initializeApp(options: FirebaseOptions(apiKey:  "AIzaSyCWmCi-yy756RGM-2wJexfeCDHiWSdI8yA", appId: "1:387488316116:android:2ad06184f8614bdbbe9941",
    messagingSenderId: "387488316116", projectId: "my-shop-e7b87",storageBucket: 'gs://my-shop-e7b87.firebasestorage.app')):await Firebase.initializeApp();
-  runApp(const MyApp());
+  runApp( const ProviderScope(child:   MyApp()));
 }
 
 class MyApp extends StatelessWidget {
