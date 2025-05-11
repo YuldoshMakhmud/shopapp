@@ -1,4 +1,5 @@
 import 'package:firebase_shop/provider/cart_provider.dart';
+import 'package:firebase_shop/views/screens/inner_screens/checkout_screen.dart';
 import 'package:firebase_shop/views/screens/main_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -351,7 +352,11 @@ class _CartScreenProductState extends ConsumerState<CartScreenProduct> {
             Align(
               alignment: const Alignment(0.83, -1),
               child: InkWell(
-                onTap: totalAmount == 0.0 ? null : () {},
+                onTap: totalAmount == 0.0 ? null : () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return checkoutScreen();
+                  }));
+                },
                 child: Container(
                   width: 166,
                   height: 71,

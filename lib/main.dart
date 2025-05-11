@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_shop/controllers/category_controller.dart';
-//import 'package:firebase_shop/views/screens/authentication_screens/register_screen.dart';
 import 'package:firebase_shop/views/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

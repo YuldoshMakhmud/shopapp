@@ -75,6 +75,7 @@ void decrementItem(String productId) {
     state = {...state};
   }
 
+
   void incrementItem(String productId) {
     if (state.containsKey(productId)) {
       state[productId]!.quantity++;
