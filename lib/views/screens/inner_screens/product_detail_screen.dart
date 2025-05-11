@@ -1,4 +1,5 @@
 import 'package:firebase_shop/provider/cart_provider.dart';
+import 'package:firebase_shop/provider/favoritre_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,7 +16,9 @@ class ProductDetailScreen extends ConsumerStatefulWidget {
 class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
   @override
   Widget build(BuildContext context) {
-    final _cartProvider = ref.read(cartProvider.notifier);
+    final cartProviderData = ref.read(cartProvider.notifier);
+    final favoriteProviderData = ref.read(favoriteProvider.notifier);
+    ref.watch(favoriteProvider);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -35,13 +38,38 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
               ),
             ),
             IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.favorite,
-                color: Colors.red,
-
-                // size: 16,
+              onPressed: () {
+                favoriteProviderData.addProuctToFavorite(
+                  productName: widget.productData['productName'],
+                  productId: widget.productData['productId'],
+                  imageUrl: widget.productData['productImages'],
+                  productPrice: widget.productData['productPrice'],
+                  productSize: widget.productData['productSize'],
+                );
+                 ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                margin: const EdgeInsets.all(15),
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.grey,
+                content: Text(widget.productData['productName']),
               ),
+            );
+              },
+              icon:
+                  favoriteProviderData.getFavoriteItem.containsKey(
+                        widget.productData['productId'],
+                      )
+                      ? Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+
+                        // size: 16,
+                      )
+                      : Icon(
+                        Icons.favorite_border,
+                        color: Colors.red,
+                        // size: 16,
+                      ),
             ),
           ],
         ),
@@ -194,47 +222,46 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Text(
-                  'About',
-                  style: GoogleFonts.lato(
-                    color: const Color(0xFF363330),
-                    fontSize: 16,
-                    letterSpacing: 1,
+                  Text(
+                    'About',
+                    style: GoogleFonts.lato(
+                      color: const Color(0xFF363330),
+                      fontSize: 16,
+                      letterSpacing: 1,
+                    ),
                   ),
-                ),
-                Text(widget.productData['description'])
+                  Text(widget.productData['description']),
                 ],
               ),
             ),
           ],
         ),
-        
+
       ),
-        bottomSheet: Padding(
+      bottomSheet: Padding(
         padding: const EdgeInsets.all(8.0),
         child: InkWell(
-          onTap: (){
-                _cartProvider.addProductToCart(
-                    productName: widget.productData['productName'],
-                    productSize: '',
-                    productPrice: widget.productData['productPrice'],
-                    catgoryName: widget.productData['category'],
-                    imageUrl: widget.productData['productImages'],
-                    instock: widget.productData['quantity'],
-                    quantity: 1,
-                    productId: widget.productData['productId'],
-                    discount: widget.productData['discount'],
-                    description: widget.productData['description'],
-                  
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      margin: const EdgeInsets.all(15),
-                      behavior: SnackBarBehavior.floating,
-                      backgroundColor: Colors.grey,
-                      content: Text(widget.productData['productName']))
-                  );
-                 
+          onTap: () {
+            cartProviderData.addProductToCart(
+              productName: widget.productData['productName'],
+              productSize: '',
+              productPrice: widget.productData['productPrice'],
+              catgoryName: widget.productData['category'],
+              imageUrl: widget.productData['productImages'],
+              instock: widget.productData['quantity'],
+              quantity: 1,
+              productId: widget.productData['productId'],
+              discount: widget.productData['discount'],
+              description: widget.productData['description'],
+            );
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                margin: const EdgeInsets.all(15),
+                behavior: SnackBarBehavior.floating,
+                backgroundColor: Colors.grey,
+                content: Text(widget.productData['productName']),
+              ),
+            );
           },
           child: Container(
             width: 386,
@@ -261,7 +288,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                       letterSpacing: 1,
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
