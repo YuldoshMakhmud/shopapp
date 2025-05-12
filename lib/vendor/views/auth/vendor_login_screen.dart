@@ -1,4 +1,4 @@
-import 'package:firebase_shop/controllers/auth_conroller.dart';
+import 'package:firebase_shop/vendor/controllers/vendor_conroller.dart';
 import 'package:firebase_shop/vendor/views/auth/vendor_register_screen.dart';
 import 'package:firebase_shop/views/screens/authentication_screens/register_screen.dart' show RegisterScreen;
 import 'package:firebase_shop/views/screens/main_screen.dart';
@@ -7,17 +7,17 @@ import 'package:google_fonts/google_fonts.dart';
 
 //import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class LoginScreen extends StatefulWidget {
+class VendorLoginScreen extends StatefulWidget {
 
-  const LoginScreen({super.key});
+  const VendorLoginScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<VendorLoginScreen> createState() => _VendorLoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _VendorLoginScreenState extends State<VendorLoginScreen> {
  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
- final AuthController _authController =AuthController();
+  final VendorAuthController _authController = VendorAuthController();
 bool _isLoading = false;
 bool _isObscure = true;
 
@@ -72,7 +72,7 @@ bool _isObscure = true;
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Login Your Accaunt",
+                    "Login Vendor's Accaunt",
                     style: GoogleFonts.getFont(
                       "Lato",
                       color: Color(0xFF0d120E),

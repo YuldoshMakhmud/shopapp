@@ -1,4 +1,3 @@
-
 import 'package:firebase_shop/views/screens/nav_screens/widgets/banner_widget.dart';
 import 'package:firebase_shop/views/screens/nav_screens/widgets/gategory_item.dart';
 import 'package:firebase_shop/views/screens/nav_screens/widgets/header_widget.dart';
