@@ -170,7 +170,7 @@ class OrderScreen extends StatelessWidget {
                                             left: 10,
                                             top: 5,
                                             child: Image.network(
-                                              orderData["productImages"],
+                                              orderData["productImage"],
                                               width: 58,
                                               height: 67,
                                               fit: BoxFit.cover,

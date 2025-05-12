@@ -1,4 +1,5 @@
 import 'package:firebase_shop/controllers/category_controller.dart';
+import 'package:firebase_shop/views/screens/inner_screens/category_product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,6 +13,9 @@ class CategoryItem extends StatefulWidget {
 }
 
 class _CategoryItemState extends State<CategoryItem> {
+
+  final CategoryController _categoryController = Get.find<CategoryController>();
+
   @override
   Widget build(BuildContext context) {
     final CategoryController categoryController =
@@ -36,12 +40,10 @@ class _CategoryItemState extends State<CategoryItem> {
               itemBuilder: (context, index) {
                 return InkWell(
                     onTap: () {
-                      
-                      // Navigator.push(context,
-                      //     MaterialPageRoute(builder: (context) {
-                      //   return AllCategoryProductScreen(
-                      //       categoryData: categoryController.categories[index]);
-                      // }));
+                     Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return CategoryProductScreen(categoryModel: _categoryController.categories[index],);
+                    }));
                     },
                     child: Container(
                       width: 83,

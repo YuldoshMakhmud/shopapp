@@ -42,7 +42,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                 favoriteProviderData.addProuctToFavorite(
                   productName: widget.productData['productName'],
                   productId: widget.productData['productId'],
-                  imageUrl: widget.productData['productImages'],
+                  imageUrl: widget.productData['productImage'],
                   productPrice: widget.productData['productPrice'],
                   productSize: widget.productData['productSize'],
                 );
@@ -114,10 +114,10 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                         height: 300,
                         child: PageView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: widget.productData['productImages'].length,
+                          itemCount: widget.productData['productImage'].length,
                           itemBuilder: ((context, index) {
                             return Image.network(
-                              widget.productData['productImages'][index],
+                              widget.productData['productImage'][index],
                               width: 198,
                               height: 225,
                               fit: BoxFit.cover,
@@ -164,8 +164,28 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                 style: GoogleFonts.roboto(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
+                  color: Colors.grey,
                   letterSpacing: 1,
                 ),
+              ),
+            ),
+            widget.productData['rating'] == 0 ? Text('') : Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                  ),
+                  Text(widget.productData['rating'].toString()),
+                   Text(
+                          "(${widget.productData['totalReviews']})",
+                          style: const TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: 2,
+                          ),)
+                ],
               ),
             ),
             Padding(
@@ -246,13 +266,13 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
               productName: widget.productData['productName'],
               productSize: '',
               productPrice: widget.productData['productPrice'],
-              catgoryName: widget.productData['category'],
-              imageUrl: widget.productData['productImages'],
+              categoryName: widget.productData['category'],
+              imageUrl: widget.productData['productImage'],
               instock: widget.productData['quantity'],
               quantity: 1,
               productId: widget.productData['productId'],
               discount: widget.productData['discount'],
-              description: widget.productData['description'],
+              description: widget.productData['description'], catgoryName: '',
             );
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(

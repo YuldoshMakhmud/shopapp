@@ -120,7 +120,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                                       left: 10,
                                       top: 5,
                                       child: Image.network(
-                                        widget.orderData["productImages"],
+                                        widget.orderData["productImage"],
                                         width: 58,
                                         height: 67,
                                         fit: BoxFit.cover,
