@@ -1,3 +1,4 @@
+import 'package:firebase_shop/views/screens/inner_screens/order_screen.dart';
 import 'package:flutter/material.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -5,6 +6,17 @@ class AccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: TextButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return OrderScreen();
+            }));
+          },
+          child: const Text('My Orders'),
+        ),
+      ),
+    );
   }
 }
