@@ -1,6 +1,5 @@
 import 'package:firebase_shop/vendor/controllers/vendor_conroller.dart';
 import 'package:firebase_shop/vendor/views/auth/vendor_login_screen.dart';
-import 'package:firebase_shop/views/screens/authentication_screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,7 +18,7 @@ class _RegisterScreenState extends State<VendorRegisterScreen> {
   bool _isLoading = false;
   late String email;
 
-  late String name;
+  late String fullName;
 
   late String password;
 
@@ -29,14 +28,14 @@ class _RegisterScreenState extends State<VendorRegisterScreen> {
       _isLoading = true;
     });
 
-    String res = await _authController.registerNewUser(email, name, password);
+    String res = await _authController.registerNewUser(email, fullName, password);
     if (res == "success") {
       Future.delayed(Duration.zero, () {
         Navigator.push(
           localContext,
           MaterialPageRoute(
             builder: (context) {
-              return LoginScreen();
+              return VendorLoginScreen();
             },
           ),
         );
@@ -157,7 +156,7 @@ class _RegisterScreenState extends State<VendorRegisterScreen> {
                   ),
                   TextFormField(
                     onChanged: (value) {
-                      name = value;
+                      fullName = value;
                     },
                     validator: (value) {
                       if (value!.isEmpty) {

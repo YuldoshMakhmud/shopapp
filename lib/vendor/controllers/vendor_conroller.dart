@@ -5,7 +5,7 @@ class VendorAuthController{
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   Future<String>registerNewUser(
-    String email,String name, String password
+    String email,String fullName, String password
   )async{
     String res = 'somethind went wrong';
     try{
@@ -13,8 +13,8 @@ class VendorAuthController{
 
   UserCredential userCredential = await _auth.createUserWithEmailAndPassword(email: email, password: password);
 
-  await _firestore.collection('buyers').doc(userCredential.user!.uid).set({
-        'fullName': name,
+  await _firestore.collection('vendors').doc(userCredential.user!.uid).set({
+        'fullName': fullName,
         'StoreImage': '',
         'email': email,
         'uid': userCredential.user!.uid,

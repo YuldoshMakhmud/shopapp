@@ -1,7 +1,7 @@
 import 'package:firebase_shop/vendor/controllers/vendor_conroller.dart';
 import 'package:firebase_shop/vendor/views/auth/vendor_register_screen.dart';
-import 'package:firebase_shop/views/screens/authentication_screens/register_screen.dart' show RegisterScreen;
-import 'package:firebase_shop/views/screens/main_screen.dart';
+import 'package:firebase_shop/vendor/views/screens/main_vendor_screen.dart';
+import 'package:firebase_shop/views/screens/authentication_screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -45,7 +45,7 @@ bool _isObscure = true;
     if(res == "succes"){
     Future.delayed(Duration.zero,(){
           Navigator.push(context, MaterialPageRoute(builder: (context){
-          return MainScreen();
+          return MainVendorScreen();
     }));});
      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content:
