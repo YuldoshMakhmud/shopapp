@@ -14,7 +14,7 @@ class MainVendorScreen extends StatefulWidget {
 }
 
 class _MainVendorScreenState extends State<MainVendorScreen> {
-  List<Widget> _pages = [
+ final List<Widget> _pages = [
 EarningScreen(),
 UploadProductVendorScreen(),
 EditProduct(),
