@@ -103,6 +103,7 @@ uploadData()async{
         'vendorName': (vendorDoc.data() as Map<String, dynamic>)['fullName'],
         'rating': 0,
         'totalReviews':0,
+        'isPopular': false,
   
     }).whenComplete((){
       setState(() {

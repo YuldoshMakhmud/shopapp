@@ -169,7 +169,7 @@ class _FavoriteScreenState extends ConsumerState<FavoriteScreen> {
                                 left: 275,
                                 top: 16,
                                 child: Text(
-                                  '\$' + wishData.productPrice.toStringAsFixed(2),
+                                  '\$${wishData.productPrice.toString()}',
                                   style: GoogleFonts.getFont(
                                     'Lato',
                                     color: const Color(0xFF0B0C1E),
