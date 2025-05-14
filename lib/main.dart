@@ -1,8 +1,7 @@
 import 'dart:io';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_shop/controllers/category_controller.dart';
-import 'package:firebase_shop/views/screens/authentication_screens/login_screen.dart';
+import 'package:firebase_shop/vendor/views/screens/main_vendor_screen.dart';
 //import 'package:firebase_shop/views/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -33,7 +32,8 @@ class MyApp extends StatelessWidget {
        
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home:LoginScreen(),
+      home: 
+      MainVendorScreen(),
     initialBinding: BindingsBuilder(() {
   Get.put(CategoryController());
 }),

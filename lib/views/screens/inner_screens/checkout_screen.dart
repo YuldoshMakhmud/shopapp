@@ -419,6 +419,7 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                         'deliveredCount': 0,
                         'delivered': false,
                         'processing': true,
+                        'vendorId': item.vendorId,
                       }).whenComplete(() {
                         cartProviderData.clear();
                         Navigator.pushReplacement(context,

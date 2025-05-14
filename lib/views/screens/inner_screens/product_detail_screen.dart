@@ -272,7 +272,8 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
               quantity: 1,
               productId: widget.productData['productId'],
               discount: widget.productData['discount'],
-              description: widget.productData['description'], catgoryName: '',
+              description: widget.productData['description'],
+              vendorId: widget.productData['vendorId']
             );
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(

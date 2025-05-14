@@ -3,7 +3,7 @@ class FavoriteModel {
   final String productId;
   final List imageUrl;
 
-  final int productPrice;
+  final double productPrice;
 
   final List productSize;
 
