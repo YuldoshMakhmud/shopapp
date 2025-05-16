@@ -7,9 +7,9 @@ class RecomendedProductWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final Stream<QuerySnapshot> _productsStream = FirebaseFirestore.instance.collection('products').snapshots();
+     final Stream<QuerySnapshot> productsStream = FirebaseFirestore.instance.collection('products').snapshots();
     return  StreamBuilder<QuerySnapshot>(
-      stream: _productsStream,
+      stream: productsStream,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return Text('Something went wrong');

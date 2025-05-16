@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uuid/uuid.dart';
 
+
 // ignore: camel_case_types
 class checkoutScreen extends ConsumerStatefulWidget {
   const checkoutScreen({super.key});
@@ -55,11 +56,7 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
   Widget build(BuildContext context) {
     final cartProviderData = ref.read(cartProvider);
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'checkout ',
-        ),
-      ),
+      appBar: AppBar(title: const Text('checkout ')),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
         child: Center(
@@ -68,9 +65,14 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
             children: [
               InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const ShippingAddressScreen();
-                  }));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const ShippingAddressScreen();
+                      },
+                    ),
+                  );
                 },
                 child: SizedBox(
                   width: 335,
@@ -86,11 +88,7 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                           height: 74,
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            border: Border.all(
-                              color: Color(
-                                0xFFEFF0F2,
-                              ),
-                            ),
+                            border: Border.all(color: Color(0xFFEFF0F2)),
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
@@ -128,22 +126,18 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                                           ),
                                         ),
                                       ),
-                                      const SizedBox(
-                                        height: 4,
-                                      ),
+                                      const SizedBox(height: 4),
                                       Align(
                                         alignment: Alignment.centerLeft,
                                         child: Text(
                                           'Enter City',
                                           style: GoogleFonts.getFont(
                                             'Lato',
-                                            color: const Color(
-                                              0xFF7F808C,
-                                            ),
+                                            color: const Color(0xFF7F808C),
                                             fontSize: 12,
                                           ),
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -168,9 +162,7 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                                   height: 43,
                                   clipBehavior: Clip.hardEdge,
                                   decoration: BoxDecoration(
-                                    color: const Color(
-                                      0xFFFBF7F5,
-                                    ),
+                                    color: const Color(0xFFFBF7F5),
                                     borderRadius: BorderRadius.circular(100),
                                   ),
                                   child: Stack(
@@ -206,15 +198,10 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                   ),
                 ),
               ),
-            const  SizedBox(
-                height: 15,
-              ),
+              const SizedBox(height: 15),
               const Text(
                 'Your item',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               Flexible(
                 child: ListView.builder(
@@ -231,11 +218,7 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                         height: 91,
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border.all(
-                            color: const Color(
-                              0xFFEFF0F2,
-                            ),
-                          ),
+                          border: Border.all(color: const Color(0xFFEFF0F2)),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Stack(
@@ -255,17 +238,13 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                                       height: 78,
                                       clipBehavior: Clip.hardEdge,
                                       decoration: const BoxDecoration(
-                                        color: Color(
-                                          0xFFBCC5FF,
-                                        ),
+                                        color: Color(0xFFBCC5FF),
                                       ),
                                       child: Image.network(
                                         cartItem.imageUrl[0],
                                       ),
                                     ),
-                                    const SizedBox(
-                                      width: 11,
-                                    ),
+                                    const SizedBox(width: 11),
                                     Expanded(
                                       child: Container(
                                         height: 78,
@@ -289,9 +268,7 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                                                   ),
                                                 ),
                                               ),
-                                              const SizedBox(
-                                                height: 4,
-                                              ),
+                                              const SizedBox(height: 4),
                                               Align(
                                                 alignment: Alignment.centerLeft,
                                                 child: Text(
@@ -302,15 +279,13 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                                                     fontWeight: FontWeight.w400,
                                                   ),
                                                 ),
-                                              )
+                                              ),
                                             ],
                                           ),
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(
-                                      width: 16,
-                                    ),
+                                    const SizedBox(width: 16),
                                     Text(
                                       cartItem.discount.toStringAsFixed(2),
                                       style: GoogleFonts.getFont(
@@ -324,7 +299,7 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                                   ],
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -332,15 +307,10 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                   },
                 ),
               ),
-              const SizedBox(
-                height: 30,
-              ),
+              const SizedBox(height: 30),
               const Text(
                 'Choose Payment Method',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               RadioListTile<String>(
                 title: const Text('Stripe'),
@@ -366,106 +336,135 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
           ),
         ),
       ),
-      bottomSheet: state == ""
-          ? Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const ShippingAddressScreen();
-                  }));
-                },
-                child: const Text('Add Address'),
-              ),
-            )
-          : Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: InkWell(
-                onTap: () async {
-                  if (_selectedPaymentMethod == 'stripe') {
-                    ///pay with stripe
-                  } else {
-                    setState(() {
-                      isLoading = true;
-                    });
-                    for (var item
-                        in ref.read(cartProvider.notifier).getCartItems.values) {
-                      DocumentSnapshot userDoc = await _firestore
-                          .collection('buyers')
-                          .doc(_auth.currentUser!.uid)
-                          .get();
-
-                      CollectionReference orderRefer =
-                          _firestore.collection('orders');
-                      final orderId = const Uuid().v4();
-                      await orderRefer.doc(orderId).set({
-                        'orderId': orderId,
-                        'productName': item.productName,
-                        'productId': item.productId,
-                        'size': item.productSize,
-                        'quantity': item.quantity,
-                        'price': item.quantity * item.productPrice,
-                        'category': item.categoryName,
-                        'productImage': item.imageUrl[0],
-                        'state':
-                            (userDoc.data() as Map<String, dynamic>)['state'],
-                        'email':
-                            (userDoc.data() as Map<String, dynamic>)['email'],
-                        'locality': (userDoc.data()
-                            as Map<String, dynamic>)['locality'],
-                        'fullName': (userDoc.data()
-                            as Map<String, dynamic>)['fullName'],
-                        'buyerId': _auth.currentUser!.uid,
-                        'deliveredCount': 0,
-                        'delivered': false,
-                        'processing': true,
-                        'vendorId': item.vendorId,
-                      }).whenComplete(() {
-                        cartProviderData.clear();
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) {
-                          return MainScreen();
-                        }));
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            backgroundColor: Colors.grey,
-                            content: Text('order have been placed'),
-                          ),
-                        );
-                        setState(() {
-                          isLoading = false;
-                        });
+      bottomSheet:
+          state == ""
+              ? Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const ShippingAddressScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: const Text('Add Address'),
+                ),
+              )
+              : Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: InkWell(
+                  onTap: () async {
+                    if (_selectedPaymentMethod == 'stripe') {
+                      ///pay with stripe
+                    } else {
+                      setState(() {
+                        isLoading = true;
                       });
+                      for (var item
+                          in ref
+                              .read(cartProvider.notifier)
+                              .getCartItems
+                              .values) {
+                        DocumentSnapshot userDoc =
+                            await _firestore
+                                .collection('buyers')
+                                .doc(_auth.currentUser!.uid)
+                                .get();
+
+                        CollectionReference orderRefer = _firestore.collection(
+                          'orders',
+                        );
+                        final orderId = const Uuid().v4();
+                        await orderRefer
+                            .doc(orderId)
+                            .set({
+                              'orderId': orderId,
+                              'productName': item.productName,
+                              'productId': item.productId,
+                              'size': item.productSize,
+                              'quantity': item.quantity,
+                              'price': item.quantity * item.productPrice,
+                              'category': item.categoryName,
+                              'productImage': item.imageUrl[0],
+                              'state':
+                                  (userDoc.data()
+                                      as Map<String, dynamic>)['state'],
+                              'email':
+                                  (userDoc.data()
+                                      as Map<String, dynamic>)['email'],
+                              'locality':
+                                  (userDoc.data()
+                                      as Map<String, dynamic>)['locality'],
+                              'fullName':
+                                  (userDoc.data()
+                                      as Map<String, dynamic>)['fullName'],
+                              'buyerId': _auth.currentUser!.uid,
+                              'deliveredCount': 0,
+                              'delivered': false,
+                              'processing': true,
+                              'vendorId': item.vendorId,
+                            })
+                            .whenComplete(() {
+                              cartProviderData.clear();
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return MainScreen();
+                                  },
+                                ),
+                              );
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: Colors.green.shade800,
+                                  behavior: SnackBarBehavior.floating,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  content: const Text(
+                                    'Order has been placed successfully',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  duration: const Duration(seconds: 3),
+                                ),
+                              );
+                              setState(() {
+                                isLoading = false;
+                              });
+                            });
+                      }
                     }
-                  }
-                },
-                child: Container(
-                  height: 50,
-                  width: MediaQuery.of(context).size.width - 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: const Color(
-                      0xFF1532E7,
+                  },
+                  child: Container(
+                    height: 50,
+                    width: MediaQuery.of(context).size.width - 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: const Color(0xFF1532E7),
                     ),
-                  ),
-                  child: Center(
-                    child: isLoading
-                        ? const CircularProgressIndicator(
-                            color: Colors.white,
-                          )
-                        : const Text(
-                            'PLACE ORDER',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17,
-                              height: 1.4,
-                            ),
-                          ),
+                    child: Center(
+                      child:
+                          isLoading
+                              ? const CircularProgressIndicator(
+                                color: Colors.white,
+                              )
+                              : const Text(
+                                'PLACE ORDER',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 17,
+                                  height: 1.4,
+                                ),
+                              ),
+                    ),
                   ),
                 ),
               ),
-            ),
     );
   }
 }

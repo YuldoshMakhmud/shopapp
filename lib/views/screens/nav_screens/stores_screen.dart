@@ -8,7 +8,7 @@ class StoresScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      final Stream<QuerySnapshot> _vendorsStream = FirebaseFirestore.instance.collection('vendors').snapshots();
+      final Stream<QuerySnapshot> vendorsStream = FirebaseFirestore.instance.collection('vendors').snapshots();
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(
@@ -57,7 +57,7 @@ class StoresScreen extends StatelessWidget {
         ),
       ),
       body:  StreamBuilder<QuerySnapshot>(
-      stream: _vendorsStream,
+      stream: vendorsStream,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return Text('Something went wrong');

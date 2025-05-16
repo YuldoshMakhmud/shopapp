@@ -38,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
         unselectedItemColor: Colors.grey,
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Colors.white.withOpacity(0.95),
+            backgroundColor: Colors.white,
             icon: Image.asset(
               'assets/icons/home.png',
               width: 25,

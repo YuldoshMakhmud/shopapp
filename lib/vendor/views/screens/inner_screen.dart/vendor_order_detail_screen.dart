@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 class VendorOrderDetailScreen extends StatefulWidget {
   final dynamic orderData;
 
-  VendorOrderDetailScreen({super.key, required this.orderData});
+  const VendorOrderDetailScreen({super.key, required this.orderData});
 
   @override
   State<VendorOrderDetailScreen> createState() =>
@@ -251,7 +251,7 @@ class _VendorOrderDetailScreenState extends State<VendorOrderDetailScreen> {
                         const SizedBox(height: 10),
                         Text(
                           widget.orderData['locality'] +
-                              " " +
+                             
                               widget.orderData['state'],
                           style: const TextStyle(fontSize: 16),
                         ),

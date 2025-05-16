@@ -81,10 +81,7 @@ class _CategoryItemState extends State<CategoryItem> {
                               clipBehavior: Clip.antiAlias,
                               child: InkWell(
                                 onTap: () {},
-                                overlayColor:
-                                    const MaterialStatePropertyAll<Color>(
-                                  Color(0x0c7f7f7f),
-                                ),
+                               splashColor: Color(0x0c7f7f7f), 
                                 child: Ink(
                                   color: Colors.white,
                                   width: 63,

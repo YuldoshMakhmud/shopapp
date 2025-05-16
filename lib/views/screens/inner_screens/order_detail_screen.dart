@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 class OrderDetailScreen extends StatefulWidget {
   final dynamic orderData;
 
-  OrderDetailScreen({super.key, required this.orderData});
+  const OrderDetailScreen({super.key, required this.orderData});
 
   @override
   State<OrderDetailScreen> createState() => _OrderDetailScreenState();
@@ -280,7 +280,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                         ),
                         Text(
                           widget.orderData['locality'] +
-                              " " +
+                               
                               widget.orderData['state'],
                           style: const TextStyle(
                             fontSize: 16,
@@ -347,7 +347,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                                               },
                                               onRatingUpdate: (value) {
                                                 rating = value;
-                                                print(rating);
+                                               
                                               },
                                             ),
                                           )
@@ -378,7 +378,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                                               'timeStamp': Timestamp.now(),
                                             }).whenComplete(() {
                                               updateProductRating(productId);
-                                              Navigator.of(context).pop();
+                                              Navigator.of( context).pop();
                                               _reviewController.clear();
                                               rating = 0;
                                             });
@@ -426,7 +426,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                                               },
                                               onRatingUpdate: (value) {
                                                 rating = value;
-                                                print(rating);
+                                               
                                               },
                                             ),
                                           )

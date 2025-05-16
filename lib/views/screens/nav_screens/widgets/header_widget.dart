@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({Key? key}) : super(key: key);
+  const HeaderWidget({super.key} );
 
   @override
   Widget build(BuildContext context) {
@@ -114,8 +114,7 @@ class HeaderWidget extends StatelessWidget {
               clipBehavior: Clip.antiAlias,
               child: InkWell(
                 onTap: () {},
-                overlayColor:
-                    MaterialStateProperty.all<Color>(const Color(0x0c7f7f7f)),
+                   splashColor: Color(0x0c7f7f7f), 
                 child: Ink(
                   width: 31,
                   height: 31,
@@ -139,8 +138,7 @@ class HeaderWidget extends StatelessWidget {
               clipBehavior: Clip.antiAlias,
               child: InkWell(
                 onTap: () {},
-                overlayColor:
-                    MaterialStateProperty.all<Color>(const Color(0x0c7f7f7f)),
+               splashColor: Color(0x0c7f7f7f), 
                 child: Ink(
                   width: 32,
                   height: 32,

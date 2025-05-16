@@ -7,9 +7,9 @@ class PopularProductsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final Stream<QuerySnapshot> _productsStream = FirebaseFirestore.instance.collection('products').where('isPopular',isEqualTo: true).snapshots();
+     final Stream<QuerySnapshot> productsStream = FirebaseFirestore.instance.collection('products').where('isPopular',isEqualTo: true).snapshots();
     return  StreamBuilder<QuerySnapshot>(
-      stream: _productsStream,
+      stream: productsStream,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return Text('Something went wrong');

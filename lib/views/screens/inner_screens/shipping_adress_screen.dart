@@ -20,14 +20,10 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(
-        0.96,
-      ),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white.withOpacity(
-          0.96,
-        ),
+        backgroundColor: Colors.white,
         title: Text(
           'Delivery',
           style: GoogleFonts.lato(

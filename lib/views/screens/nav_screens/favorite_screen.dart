@@ -16,7 +16,7 @@ class _FavoriteScreenState extends ConsumerState<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
     final _favoriteProvider = ref.read(favoriteProvider.notifier);
-    final _wishItem = ref.watch(favoriteProvider);
+    final wishItem = ref.watch(favoriteProvider);
     return Scaffold(
         appBar: PreferredSize(
           preferredSize:
@@ -55,7 +55,7 @@ class _FavoriteScreenState extends ConsumerState<FavoriteScreen> {
                               badgeColor: Colors.yellow.shade800,
                             ),
                             badgeContent: Text(
-                              _wishItem.length.toString(),
+                              wishItem.length.toString(),
                               style: GoogleFonts.lato(
                                 // fontSize: 11,
                                 color: Colors.white,
@@ -93,7 +93,7 @@ class _FavoriteScreenState extends ConsumerState<FavoriteScreen> {
             ),
           ),
         ),
-        body: _wishItem.isEmpty
+        body: wishItem.isEmpty
             ? Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -119,10 +119,10 @@ class _FavoriteScreenState extends ConsumerState<FavoriteScreen> {
                 ),
               )
             : ListView.builder(
-                itemCount: _wishItem.length,
+                itemCount: wishItem.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  final wishData = _wishItem.values.toList()[index];
+                  final wishData = wishItem.values.toList()[index];
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Center(

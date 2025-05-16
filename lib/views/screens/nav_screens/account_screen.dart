@@ -14,7 +14,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 class AccountScreen extends ConsumerStatefulWidget {
-  const AccountScreen({Key? key});
+  const AccountScreen({super.key});
 
   @override
   _AccountScreenState createState() => _AccountScreenState();
@@ -29,7 +29,7 @@ class _AccountScreenState extends ConsumerState<AccountScreen> {
    String city = '';
    String profileImage = '';
 
-_uploadProfileImage(Uint8List? image)async{
+uploadProfileImage(Uint8List? image)async{
   Reference ref = _firebaseStorage.ref().child('profileImage').child(_auth.currentUser!.uid);
   UploadTask uploadTask = ref.putData(image!);
   TaskSnapshot snapshot = await uploadTask;
@@ -62,7 +62,7 @@ void _showUpdatedProfileDialog(){
  
    @override
   void initState() {
-    // TODO: implement initState
+   
     super.initState();
     _setUpUserDataStream();
   }

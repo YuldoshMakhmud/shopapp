@@ -38,7 +38,7 @@ VendorProfile(),
         unselectedItemColor: Colors.grey,
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Colors.white.withOpacity(0.95),
+            backgroundColor: Colors.white,
             icon: Icon(CupertinoIcons.money_dollar),
             label: 'Earning',
           ),

@@ -23,7 +23,7 @@ final BannerController _bannerController =BannerController();
         height: 170,
         decoration: BoxDecoration(color: Color(0xFFF7F7F7),boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: Color.fromRGBO(204, 204, 204, 0.2),
             spreadRadius: 2,
             blurRadius: 5,
             offset: Offset(0,2),
@@ -39,10 +39,10 @@ final BannerController _bannerController =BannerController();
                 ),
               );
             } else if (snapshot.hasError) {
-              print('Error fetching banners: ${snapshot.error}');
+              debugPrint('Error fetching banners: ${snapshot.error}');
               return Icon(Icons.error);
             } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              print('No banners found.');
+              debugPrint('No banners found.');
               return Center(
                 child: Text(
                   'No banners available',
