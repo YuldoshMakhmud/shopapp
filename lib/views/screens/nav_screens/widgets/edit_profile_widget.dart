@@ -20,7 +20,7 @@ Uint8List? _image;
     if(_file != null){
       return await _file.readAsBytes();
     }else{
-      print('no image selected');
+      debugPrint('no image selected');
     }
   }
   selectGalleryImage()async{
