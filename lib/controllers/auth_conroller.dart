@@ -34,6 +34,7 @@ class AuthController{
 
     }
     
+    // ignore: empty_catches
     catch(e){}
 
     return res;

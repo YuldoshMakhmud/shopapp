@@ -51,7 +51,7 @@ bool _isObscure = true;
             content:
                 Text("Logged in")));
     }else{
-      print(res);
+      debugPrint(res);
       setState(() {
         _isLoading = true;
       });
@@ -195,7 +195,7 @@ bool _isObscure = true;
                        loginUser();
                   
                         }else{
-                         print('feild');
+                         debugPrint('feild');
                         }},
                     child: Container(
                       width: 319,
