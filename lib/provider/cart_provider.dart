@@ -8,11 +8,11 @@ final cartProvider =
 class CartNotifier extends StateNotifier<Map<String, CartModel>> {
   CartNotifier() : super({});
 
-  void addProductToCart({
+  void addProductToCart( {
     required String productName,
     required double productPrice,
     required String categoryName,
-    required List imageUrl,
+    required final List<String> imageUrl,
     required int quantity,
     required String productId,
     required String productSize,
@@ -99,4 +99,5 @@ void decrementItem(String productId) {
   }
 
    Map<String, CartModel> get getCartItems => state;
+
 }

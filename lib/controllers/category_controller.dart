@@ -17,7 +17,7 @@ class CategoryController extends GetxController {
     _firestore.collection('categories').snapshots().listen((querySnapshot) {
       categories.assignAll(
         querySnapshot.docs.map((doc) {
-          final data = doc.data() as Map<String, dynamic>;
+          final data = doc.data() as Map<String,dynamic>;
           return CategoryModel(
             categoryName: data['categoryName'],
             categoryImage: data['categoryImage'],

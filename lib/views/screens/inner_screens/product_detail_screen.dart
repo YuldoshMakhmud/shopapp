@@ -42,7 +42,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                 favoriteProviderData.addProuctToFavorite(
                   productName: widget.productData['productName'],
                   productId: widget.productData['productId'],
-                  imageUrl: widget.productData['productImage'],
+                   imageUrl: List<String>.from(widget.productData['productImage']),
                   productPrice: widget.productData['productPrice'],
                   productSize: widget.productData['productSize'],
                 );
@@ -262,28 +262,29 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
         padding: const EdgeInsets.all(8.0),
         child: InkWell(
           onTap: () {
-            cartProviderData.addProductToCart(
-              productName: widget.productData['productName'],
-              productSize: '',
-              productPrice: widget.productData['productPrice'],
-              categoryName: widget.productData['category'],
-              imageUrl: widget.productData['productImage'],
-              instock: widget.productData['quantity'],
-              quantity: 1,
-              productId: widget.productData['productId'],
-              discount: widget.productData['discount'],
-              description: widget.productData['description'],
-              vendorId: widget.productData['vendorId']
-            );
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                margin: const EdgeInsets.all(15),
-                behavior: SnackBarBehavior.floating,
-                backgroundColor: Colors.grey,
-                content: Text(widget.productData['productName']),
-              ),
-            );
-          },
+  cartProviderData.addProductToCart(
+    productName: widget.productData['productName'],
+    productSize: '',
+    productPrice: widget.productData['productPrice'],
+    categoryName: widget.productData['category'],
+    imageUrl: List<String>.from(widget.productData['productImage']), // FIXED
+    instock: widget.productData['quantity'],
+    quantity: 1,
+    productId: widget.productData['productId'],
+    discount: widget.productData['discount'],
+    description: widget.productData['description'],
+    vendorId: widget.productData['vendorId'],
+  );
+
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      margin: const EdgeInsets.all(15),
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: Colors.grey,
+      content: Text('${widget.productData['productName']} added to cart'),
+    ),
+  );
+},
           child: Container(
             width: 386,
             height: 48,

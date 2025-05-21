@@ -171,15 +171,14 @@ class ProductItemWidget extends StatelessWidget {
             Positioned(
               left: 56,
               top: 155,
-              child: Text(
-                '500> sold',
-                style: GoogleFonts.lato(
-                  color: const Color(
-                    0xFF7F8E9D,
+              child:  Text(
+                  '${productData['quantity']} ta qoldi',
+                  style: TextStyle(
+                    color: Color(0xFF7F8E9D),
+                    fontSize: 12,
+                    fontFamily: 'Lato',
                   ),
-                  fontSize: 12,
                 ),
-              ),
             ),
             Positioned(
               left: 23,

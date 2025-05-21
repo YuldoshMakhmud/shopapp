@@ -59,6 +59,7 @@ class PopularItem extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
+            
             Text(
               productData['productName'],
               style: const TextStyle(
