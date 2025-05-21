@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_shop/views/screens/nav_screens/widgets/product_item_widget.dart';
+import 'package:Koreyadan/views/screens/nav_screens/widgets/product_item_widget.dart';
 import 'package:flutter/material.dart';
 
 class PopularProductsWidget extends StatelessWidget {

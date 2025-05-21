@@ -1,5 +1,5 @@
+import 'package:Koreyadan/views/screens/inner_screens/product_detail_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_shop/views/screens/inner_screens/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class PopularItem extends StatelessWidget {

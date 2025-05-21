@@ -1,5 +1,5 @@
-import 'package:firebase_shop/vendor/controllers/vendor_conroller.dart';
-import 'package:firebase_shop/vendor/views/auth/vendor_login_screen.dart';
+import 'package:Koreyadan/vendor/controllers/vendor_conroller.dart';
+import 'package:Koreyadan/vendor/views/auth/vendor_login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_shop/provider/cart_provider.dart';
-import 'package:firebase_shop/views/screens/inner_screens/shipping_adress_screen.dart';
-import 'package:firebase_shop/views/screens/main_screen.dart';
+import 'package:Koreyadan/provider/cart_provider.dart';
+import 'package:Koreyadan/views/screens/inner_screens/shipping_adress_screen.dart';
+import 'package:Koreyadan/views/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';

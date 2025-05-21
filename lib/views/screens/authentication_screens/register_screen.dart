@@ -1,5 +1,5 @@
-import 'package:firebase_shop/controllers/auth_conroller.dart';
-import 'package:firebase_shop/views/screens/authentication_screens/login_screen.dart';
+import 'package:Koreyadan/controllers/auth_conroller.dart';
+import 'package:Koreyadan/views/screens/authentication_screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

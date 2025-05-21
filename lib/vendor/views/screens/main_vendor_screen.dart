@@ -1,8 +1,8 @@
-import 'package:firebase_shop/vendor/views/screens/bottomNavigation/earning_screen.dart';
-import 'package:firebase_shop/vendor/views/screens/bottomNavigation/edit_product.dart';
-import 'package:firebase_shop/vendor/views/screens/bottomNavigation/order_screen.dart';
-import 'package:firebase_shop/vendor/views/screens/bottomNavigation/upload_product_vendor_screen.dart';
-import 'package:firebase_shop/vendor/views/screens/bottomNavigation/vendor_profile.dart';
+import 'package:Koreyadan/vendor/views/screens/bottomNavigation/earning_screen.dart';
+import 'package:Koreyadan/vendor/views/screens/bottomNavigation/edit_product.dart';
+import 'package:Koreyadan/vendor/views/screens/bottomNavigation/order_screen.dart';
+import 'package:Koreyadan/vendor/views/screens/bottomNavigation/upload_product_vendor_screen.dart';
+import 'package:Koreyadan/vendor/views/screens/bottomNavigation/vendor_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

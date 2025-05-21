@@ -1,4 +1,4 @@
-import 'package:firebase_shop/models/category_model.dart';
+import 'package:Koreyadan/models/category_model.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

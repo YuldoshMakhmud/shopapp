@@ -1,7 +1,5 @@
-
-
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:firebase_shop/controllers/banner_conroller.dart';
+import 'package:Koreyadan/controllers/banner_conroller.dart';
 import 'package:flutter/material.dart';
 
 class BannerWidget extends StatefulWidget {

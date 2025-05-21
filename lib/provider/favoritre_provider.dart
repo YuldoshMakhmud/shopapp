@@ -1,4 +1,4 @@
-import 'package:firebase_shop/models/favorite_models.dart';
+import 'package:Koreyadan/models/favorite_models.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final favoriteProvider =

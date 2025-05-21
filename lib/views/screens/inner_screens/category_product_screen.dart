@@ -1,6 +1,6 @@
+import 'package:Koreyadan/models/category_model.dart';
+import 'package:Koreyadan/views/screens/nav_screens/widgets/popular_item.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_shop/models/category_model.dart';
-import 'package:firebase_shop/views/screens/nav_screens/widgets/popular_item.dart';
 import 'package:flutter/material.dart';
 
 class CategoryProductScreen extends StatelessWidget {

@@ -1,8 +1,8 @@
-import 'package:firebase_shop/views/screens/nav_screens/account_screen.dart';
-import 'package:firebase_shop/views/screens/nav_screens/cart_product_widget.dart';
-import 'package:firebase_shop/views/screens/nav_screens/favorite_screen.dart';
-import 'package:firebase_shop/views/screens/nav_screens/home_screen.dart';
-import 'package:firebase_shop/views/screens/nav_screens/stores_screen.dart';
+import 'package:Koreyadan/views/screens/nav_screens/account_screen.dart';
+import 'package:Koreyadan/views/screens/nav_screens/cart_product_widget.dart';
+import 'package:Koreyadan/views/screens/nav_screens/favorite_screen.dart';
+import 'package:Koreyadan/views/screens/nav_screens/home_screen.dart';
+import 'package:Koreyadan/views/screens/nav_screens/stores_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {

@@ -1,7 +1,7 @@
-import 'package:firebase_shop/controllers/auth_conroller.dart';
-import 'package:firebase_shop/vendor/views/auth/vendor_register_screen.dart';
-import 'package:firebase_shop/views/screens/authentication_screens/register_screen.dart' show RegisterScreen;
-import 'package:firebase_shop/views/screens/main_screen.dart';
+import 'package:Koreyadan/controllers/auth_conroller.dart';
+import 'package:Koreyadan/vendor/views/auth/vendor_register_screen.dart';
+import 'package:Koreyadan/views/screens/authentication_screens/register_screen.dart' show RegisterScreen;
+import 'package:Koreyadan/views/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

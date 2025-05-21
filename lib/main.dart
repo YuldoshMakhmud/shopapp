@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_shop/controllers/category_controller.dart';
-import 'package:firebase_shop/views/screens/authentication_screens/login_screen.dart';
+import 'package:Koreyadan/controllers/category_controller.dart';
+import 'package:Koreyadan/views/screens/authentication_screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       SystemUiOverlayStyle(statusBarColor: Colors.transparent),
     );
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'Koreyadan',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
        

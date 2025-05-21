@@ -1,9 +1,9 @@
-import 'package:firebase_shop/views/screens/nav_screens/widgets/banner_widget.dart';
-import 'package:firebase_shop/views/screens/nav_screens/widgets/gategory_item.dart';
-import 'package:firebase_shop/views/screens/nav_screens/widgets/header_widget.dart';
-import 'package:firebase_shop/views/screens/nav_screens/widgets/popular_products_widget.dart';
-import 'package:firebase_shop/views/screens/nav_screens/widgets/recomended_product_widget.dart';
-import 'package:firebase_shop/views/screens/nav_screens/widgets/reuseable_text_widget.dart';
+import 'package:Koreyadan/views/screens/nav_screens/widgets/banner_widget.dart';
+import 'package:Koreyadan/views/screens/nav_screens/widgets/gategory_item.dart';
+import 'package:Koreyadan/views/screens/nav_screens/widgets/header_widget.dart';
+import 'package:Koreyadan/views/screens/nav_screens/widgets/popular_products_widget.dart';
+import 'package:Koreyadan/views/screens/nav_screens/widgets/recomended_product_widget.dart';
+import 'package:Koreyadan/views/screens/nav_screens/widgets/reuseable_text_widget.dart';
 import 'package:flutter/material.dart';
 
 

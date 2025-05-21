@@ -1,4 +1,4 @@
-import 'package:firebase_shop/models/cart_model.dart';
+import 'package:Koreyadan/models/cart_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final cartProvider =

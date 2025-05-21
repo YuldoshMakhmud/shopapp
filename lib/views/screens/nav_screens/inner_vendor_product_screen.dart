@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_shop/views/screens/nav_screens/widgets/popular_item.dart';
+import 'package:Koreyadan/views/screens/nav_screens/widgets/popular_item.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

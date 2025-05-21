@@ -1,5 +1,5 @@
-import 'package:firebase_shop/controllers/category_controller.dart';
-import 'package:firebase_shop/views/screens/inner_screens/category_product_screen.dart';
+import 'package:Koreyadan/controllers/category_controller.dart';
+import 'package:Koreyadan/views/screens/inner_screens/category_product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

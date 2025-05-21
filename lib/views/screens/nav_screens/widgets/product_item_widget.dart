@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:firebase_shop/views/screens/inner_screens/product_detail_screen.dart';
+import 'package:Koreyadan/views/screens/inner_screens/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 class ProductItemWidget extends StatelessWidget {
