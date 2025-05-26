@@ -1,3 +1,4 @@
+import 'package:Koreyadan/views/screens/inner_screens/uzpay.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:Koreyadan/provider/cart_provider.dart';
@@ -316,16 +317,6 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               RadioListTile<String>(
-                title: const Text('Stripe'),
-                value: 'stripe',
-                groupValue: _selectedPaymentMethod,
-                onChanged: (String? value) {
-                  setState(() {
-                    _selectedPaymentMethod = value!;
-                  });
-                },
-              ),
-              RadioListTile<String>(
                 title: const Text('Cash on Delivery'),
                 value: 'cashOnDelivery',
                 groupValue: _selectedPaymentMethod,
@@ -335,6 +326,32 @@ class _checkoutScreenState extends ConsumerState<checkoutScreen> {
                   });
                 },
               ),
+             InkWell(
+  onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => UzPayScreen()),
+    );
+  },
+  child: Container(
+    width: 200,
+    height: 200,
+    decoration: BoxDecoration(
+      color: Colors.indigo,
+      borderRadius: BorderRadius.circular(20),
+    ),
+    child: Center(
+      child: Text(
+        "UzPay",
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
+  ),
+)
             ],
           ),
         ),
